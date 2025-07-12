@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -9,8 +8,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { useToast } from '@/hooks/use-toast';
-import { Upload, X, Plus, Image as ImageIcon } from 'lucide-react';
-import { categories, sizes, conditions } from '@/data/mockData';
+import { Upload, X, Plus } from 'lucide-react';
+import { categories, sizes, conditions, featuredItems } from '@/data/mockData';
 import Navbar from '@/components/Navbar';
 
 const ListItem = () => {
@@ -113,11 +112,34 @@ const ListItem = () => {
 
     setIsSubmitting(true);
 
+    // Create a new item object
+    const newItem = {
+      id: (featuredItems.length + 1).toString(),
+      title: formData.title,
+      description: formData.description,
+      category: formData.category,
+      type: formData.type || formData.category,
+      size: formData.size,
+      condition: formData.condition,
+      tags: formData.tags,
+      images: formData.images.map(file => URL.createObjectURL(file)),
+      image: URL.createObjectURL(formData.images[0]),
+      owner: 'You',
+      ownerId: 'current-user',
+      points: Math.floor(Math.random() * 50) + 20, // Random points between 20-70
+      status: 'available' as const,
+      createdAt: new Date().toISOString().split('T')[0],
+      location: 'Your Location'
+    };
+
     // Simulate API call
     setTimeout(() => {
+      // Add the new item to the featuredItems array (in a real app, this would be done via API)
+      featuredItems.unshift(newItem);
+      
       toast({
         title: "Item Listed Successfully!",
-        description: "Your item has been submitted for review and will be available soon.",
+        description: "Your item has been added to the collection and is now available for swapping.",
       });
       
       // Reset form
@@ -134,8 +156,8 @@ const ListItem = () => {
       
       setIsSubmitting(false);
       
-      // Navigate to dashboard after successful submission
-      navigate('/dashboard');
+      // Navigate to browse page to show the newly listed item
+      navigate('/browse');
     }, 2000);
   };
 
