@@ -26,8 +26,8 @@ const Browse = () => {
                           item.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
       
       const matchesCategory = selectedCategory === 'All Categories' || item.category === selectedCategory;
-      const matchesSize = !selectedSize || item.size === selectedSize;
-      const matchesCondition = !selectedCondition || item.condition === selectedCondition;
+      const matchesSize = !selectedSize || selectedSize === 'all-sizes' || item.size === selectedSize;
+      const matchesCondition = !selectedCondition || selectedCondition === 'all-conditions' || item.condition === selectedCondition;
       
       return matchesSearch && matchesCategory && matchesSize && matchesCondition;
     });
@@ -105,7 +105,7 @@ const Browse = () => {
                   <SelectValue placeholder="Size" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Sizes</SelectItem>
+                  <SelectItem value="all-sizes">All Sizes</SelectItem>
                   {sizes.map((size) => (
                     <SelectItem key={size} value={size}>
                       {size}
@@ -119,7 +119,7 @@ const Browse = () => {
                   <SelectValue placeholder="Condition" />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="">All Conditions</SelectItem>
+                  <SelectItem value="all-conditions">All Conditions</SelectItem>
                   {conditions.map((condition) => (
                     <SelectItem key={condition} value={condition}>
                       {condition}
