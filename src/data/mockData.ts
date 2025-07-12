@@ -41,8 +41,11 @@ export const featuredItems: Item[] = [
     size: 'M',
     condition: 'Good',
     tags: ['vintage', 'denim', 'casual', '90s'],
-    images: ['/placeholder.svg?height=400&width=400'],
-    image: '/placeholder.svg?height=400&width=400',
+    images: [
+      'https://images.unsplash.com/photo-1544966503-7cc5ac882d5e?w=400&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=400&h=400&fit=crop'
+    ],
+    image: 'https://images.unsplash.com/photo-1544966503-7cc5ac882d5e?w=400&h=400&fit=crop',
     owner: 'Sarah M.',
     ownerId: 'user1',
     points: 45,
@@ -59,8 +62,11 @@ export const featuredItems: Item[] = [
     size: 'S',
     condition: 'Excellent',
     tags: ['floral', 'summer', 'dress', 'casual'],
-    images: ['/placeholder.svg?height=400&width=400'],
-    image: '/placeholder.svg?height=400&width=400',
+    images: [
+      'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&h=400&fit=crop'
+    ],
+    image: 'https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=400&h=400&fit=crop',
     owner: 'Emma L.',
     ownerId: 'user2',
     points: 35,
@@ -77,8 +83,11 @@ export const featuredItems: Item[] = [
     size: 'L',
     condition: 'Excellent',
     tags: ['designer', 'wool', 'professional', 'winter'],
-    images: ['/placeholder.svg?height=400&width=400'],
-    image: '/placeholder.svg?height=400&width=400',
+    images: [
+      'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400&h=400&fit=crop',
+      'https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=400&h=400&fit=crop'
+    ],
+    image: 'https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=400&h=400&fit=crop',
     owner: 'Michael R.',
     ownerId: 'user3',
     points: 80,
@@ -92,7 +101,7 @@ export const mockUser: User = {
   id: 'user1',
   name: 'Sarah Mitchell',
   email: 'sarah@example.com',
-  avatar: '/placeholder.svg?height=100&width=100',
+  avatar: 'https://images.unsplash.com/photo-1494790108755-2616b9b6b5b8?w=100&h=100&fit=crop&crop=face',
   points: 250,
   itemsListed: 12,
   swapsCompleted: 8,
