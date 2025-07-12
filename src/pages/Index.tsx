@@ -319,30 +319,62 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 bg-gradient-to-r from-green-600 to-orange-600">
-        <div className="container mx-auto text-center">
-          <div className="max-w-2xl mx-auto text-white">
-            <h2 className="text-3xl font-bold mb-4">Ready to Start Your Sustainable Fashion Journey?</h2>
-            <p className="text-lg mb-8 opacity-90">
-              Join thousands of fashion-conscious individuals making a difference, one swap at a time.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/register">
-                <Button size="lg" variant="secondary" className="bg-white text-green-700 hover:bg-gray-100 px-8 py-4">
-                  Join ReWear Today
-                </Button>
-              </Link>
-              
-              <Link to="/browse">
-                <Button size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 px-8 py-4">
-                  Explore Items
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <footer className="bg-gradient-to-r from-green-700 to-orange-600 text-white pt-16 pb-8 px-6">
+  <div className="container mx-auto grid md:grid-cols-4 gap-12">
+    {/* Brand */}
+    <div>
+      <h3 className="text-2xl font-bold mb-4">ReWear</h3>
+      <p className="text-sm opacity-90">
+        Sustainable fashion, simplified. Join us in the mission to reduce waste and look great doing it.
+      </p>
+    </div>
+
+    {/* Navigation */}
+    <div>
+      <h4 className="text-lg font-semibold mb-4">Navigation</h4>
+      <ul className="space-y-2 text-sm">
+        <li><Link to="/" className="hover:underline">Home</Link></li>
+        <li><Link to="/browse" className="hover:underline">Browse Items</Link></li>
+        <li><Link to="/how-it-works" className="hover:underline">How It Works</Link></li>
+        <li><Link to="/about" className="hover:underline">About Us</Link></li>
+      </ul>
+    </div>
+
+    {/* Social */}
+    <div>
+      <h4 className="text-lg font-semibold mb-4">Follow Us</h4>
+      <div className="flex space-x-4">
+        <a href="#" className="hover:text-gray-200 transition"><i className="fab fa-instagram"></i></a>
+        <a href="#" className="hover:text-gray-200 transition"><i className="fab fa-twitter"></i></a>
+        <a href="#" className="hover:text-gray-200 transition"><i className="fab fa-facebook"></i></a>
+        <a href="#" className="hover:text-gray-200 transition"><i className="fab fa-pinterest"></i></a>
+      </div>
+    </div>
+
+    {/* Newsletter */}
+    <div>
+      <h4 className="text-lg font-semibold mb-4">Stay in the Loop</h4>
+      <form className="flex flex-col space-y-3">
+        <input
+          type="email"
+          placeholder="Your email"
+          className="px-4 py-2 rounded bg-white text-black focus:outline-none"
+        />
+        <button
+          type="submit"
+          className="bg-white text-green-700 hover:bg-gray-100 px-4 py-2 rounded font-semibold"
+        >
+          Subscribe
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div className="mt-12 border-t border-white/20 pt-6 text-center text-sm opacity-80">
+    © {new Date().getFullYear()} ReWear. All rights reserved.
+  </div>
+</footer>
+
     </div>
   );
 };
